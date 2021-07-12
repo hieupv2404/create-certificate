@@ -14,12 +14,12 @@ public class OpenPDFView extends AbstractPdfView {
     @Override
     protected void buildPdfDocument(Map<String, Object> model, Document document,
                                     PdfWriter writer, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        System.out.println("buildPdfDocument in OpenPDFView");
+        System.out.println("PDF Created!");
         // List of users that will be displayed in the PDF
         CertificateResponse certificateResponse = (CertificateResponse) model.get("certificates");
 
-        Font font = new Font(Font.HELVETICA, 13, Font.BOLDITALIC);
-        Font fontBold = new Font(Font.HELVETICA, 14, Font.BOLD);
+        Font font = new Font(Font.HELVETICA, 18, Font.BOLDITALIC);
+        Font fontBold = new Font(Font.HELVETICA, 18, Font.BOLD);
 
         //add image
         String imageFile = "https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/company-logo/2bd2a080caf53b335dd5d4f3f89a5a1b.png";
