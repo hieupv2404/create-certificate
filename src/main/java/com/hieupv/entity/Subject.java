@@ -3,6 +3,7 @@ package com.hieupv.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 @Data
@@ -23,4 +24,6 @@ public class Subject {
     @ToString.Exclude
     private Student student;
     private int certificate;
+    @Column(name = "date_of_done")
+    private Timestamp dateOfDone;
 }

@@ -15,51 +15,42 @@
     <title>Login</title>
     <link href="<c:url value="/resources/css/bootstrap.min.css" />"
           rel="stylesheet">
+
     <script src="<c:url value="/resources/js/jquery-3.6.0.min.js" />"></script>
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+    <link href="<c:url value="login.css" />"
+          rel="stylesheet">
 </head>
 <body>
 <div>
 
-    <div class="login_wrapper">
-        <div class="animate form login_form">
-            <section class="login_content">
+    <div class="wrapper fadeInDown text-center">
+        <div id="formContent">
+            <!-- Tabs Titles -->
 
-                <%--@elvariable id="loginForm" type=""--%>
-                <form:form modelAttribute="loginForm" servletRelativeAction="/processLogin" method="POST">
-                    <h1>Login</h1>
-                    <div>
-                        <form:input path="username" cssClass="form-control" placeholder="Username"/>
-                        <div class="has-error">
-                            <form:errors path="username" cssClass="help-block"></form:errors>
-                        </div>
-                    </div>
-                    <div>
-                        <form:password path="password" cssClass="form-control" placeholder="Password"/>
-                        <div class="has-error">
-                            <form:errors path="password" cssClass="help-block"></form:errors>
-                        </div>
-                    </div>
-                    <div>
-                        <button class="btn btn-default submit" type="submit">Log in</button>
-                    </div>
+        <h2>Login</h2>
 
-                    <div class="clearfix"></div>
+            <!-- Login Form -->
+            <form:form modelAttribute="loginForm" servletRelativeAction="/processLogin" method="POST">
+                Username: <form:input type="text" id="login" class="fadeIn second" name="login" placeholder="Username" path="username"/>
+                <br>
+                <br>
 
-                    <div class="separator">
+                Password: <form:input type="text" id="password" class="fadeIn third" name="login" placeholder="Password" path="password"/>
+                <br>
+                <br>
+                <input type="submit" class="fadeIn fourth" value="Log In">
+            </form:form>
 
-                        <div class="clearfix"></div>
-                        <br/>
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+            </div>
+            <div id="formFooter">
+                <h4>Create Certificate</h4>
+            </div>
 
-                        <div>
-                            <h1><i class="fa fa-paw"></i> Create Certificate </h1>
-                        </div>
-                    </div>
-                </form:form>
-            </section>
         </div>
-
-
     </div>
 </div>
 

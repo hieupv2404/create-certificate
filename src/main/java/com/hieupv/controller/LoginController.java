@@ -39,7 +39,7 @@ public class LoginController {
             return "redirect:/login";
         }
         session.setAttribute("student", student);
-        return "redirect:/api/students";
+        return "redirect:/api/subjects";
 
 
     }

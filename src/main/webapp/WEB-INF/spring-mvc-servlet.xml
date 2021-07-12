@@ -10,9 +10,15 @@
 
     <mvc:annotation-driven/>
 
+    <bean id="PDFResolver" class=
+            "org.springframework.web.servlet.view.ResourceBundleViewResolver">
+        <property name="order" value="1"/>
+        <property name="basename" value="pdf-view"/>
+    </bean>
+
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="order" value="1"/>
+        <property name="order" value="2"/>
         <property name="prefix">
             <value>/WEB-INF/views/</value>
         </property>
