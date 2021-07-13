@@ -109,5 +109,15 @@
     <orderEntry type="library" name="Maven: com.twelvemonkeys.common:common-lang:3.4" level="project" />
     <orderEntry type="library" name="Maven: com.twelvemonkeys.common:common-io:3.4" level="project" />
     <orderEntry type="library" name="Maven: com.twelvemonkeys.common:common-image:3.4" level="project" />
+    <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.10.2" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:html2pdf:2.1.6" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:forms:7.1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:svg:7.1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:barcodes:7.1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:font-asian:7.1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:hyph:7.1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:pdfa:7.1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:sign:7.1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:styled-xml-parser:7.1.9" level="project" />
   </component>
 </module>

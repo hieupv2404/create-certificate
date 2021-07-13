@@ -5,6 +5,7 @@ import com.hieupv.dao.SubjectDAO;
 import com.hieupv.entity.Student;
 import com.hieupv.entity.Subject;
 import com.hieupv.service.SubjectService;
+import com.hieupv.utils.SimpleDateFormatCustom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -61,7 +62,7 @@ public class SubjectServiceImpl implements SubjectService {
                 .nameSubject(subject.getName())
                 .nameStudent(subject.getStudent().getName())
                 .grade(grade)
-                .dateOfDone(subject.getDateOfDone())
+                .dateOfDone(new SimpleDateFormatCustom().formatDate(subject.getDateOfDone()))
                 .build();
     }
 }

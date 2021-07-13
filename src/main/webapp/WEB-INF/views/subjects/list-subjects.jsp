@@ -45,7 +45,7 @@
                                     <button type="button" class="btn btn-primary">Continue</button>
                                 </c:when>
                                 <c:otherwise>
-                                    <button class="btn btn-success" formmethod="get"><a href="<c:url value="/api/subjects/${tempSubject.id}/viewPDF"/>"  style="color: white; text-decoration: none; padding: 5px">View Certificate</a></button>
+                                    <button class="btn btn-success" formmethod="get"><a href="<c:url value="/api/subjects/${tempSubject.id}/viewCertificate"/>"  style="color: white; text-decoration: none; padding: 5px">View Certificate</a></button>
                                 </c:otherwise>
                             </c:choose>
                             </td>

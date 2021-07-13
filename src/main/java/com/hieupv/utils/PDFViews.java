@@ -33,7 +33,7 @@ public class PDFViews extends NetJSAbstractViewPDF {
             table.addCell(certificateResponse.getNameSubject());
             table.addCell(certificateResponse.getNameStudent());
             table.addCell(certificateResponse.getGrade());
-            table.addCell(new SimpleDateFormatCustom().formatDate(certificateResponse.getDateOfDone()));
+            table.addCell(certificateResponse.getDateOfDone());
 
         document.add(table);
     }

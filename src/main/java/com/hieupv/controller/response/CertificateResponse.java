@@ -8,8 +8,9 @@ import java.sql.Timestamp;
 @Data
 @Builder
 public class CertificateResponse {
+    private int id;
     private String nameSubject;
     private String nameStudent;
     private String grade;
-    private Timestamp dateOfDone;
+    private String dateOfDone;
 }

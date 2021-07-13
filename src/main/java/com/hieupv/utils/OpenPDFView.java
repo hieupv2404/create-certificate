@@ -46,7 +46,7 @@ public class OpenPDFView extends AbstractPdfView {
         paragraphGrade.setAlignment(Element.ALIGN_CENTER);
         document.add(paragraphGrade);
 
-        String dateOfDone = "Date: " + new SimpleDateFormatCustom().formatDate(certificateResponse.getDateOfDone());
+        String dateOfDone = "Date: " +certificateResponse.getDateOfDone();
         Paragraph paragraphDateOfDone = new Paragraph(dateOfDone, font);
         paragraphDateOfDone.setAlignment(Element.ALIGN_RIGHT);
         document.add(paragraphDateOfDone);
