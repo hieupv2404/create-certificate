@@ -55,11 +55,12 @@ public class SubjectController {
         certificateResponse.setId(id);
         certificateResponseList.add(certificateResponse);
         model.addAttribute("certificates", certificateResponseList);
+        model.addAttribute("path", Constant.PATH_CREATE_PDF);
         return "certificates/certificate";
     }
 
     @GetMapping("/{id}/downloadPDF")
-    public String downloadCertificate(@PathVariable Integer id) throws Exception {
+    public String downloadCertificate(Model model, @PathVariable Integer id, HttpSession session) throws Exception {
         String url = Constant.SERVER + "/api/subjects/" + id + "/viewCertificate";
         Document doc = Jsoup.connect(url).get();
         doc.select("div.download-btn").remove();
@@ -67,17 +68,18 @@ public class SubjectController {
         if (!file.exists()) {
             file.mkdirs();
         }
-        Path target = Paths.get("C:/create-certificate/resources/image/2bd2a080caf53b335dd5d4f3f89a5a1b.png");
+        Path target = Paths.get(Constant.PATH_CREATE_PDF+"image/2bd2a080caf53b335dd5d4f3f89a5a1b.png");
         URL website = new URL("https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/company-logo/2bd2a080caf53b335dd5d4f3f89a5a1b.png");
         try (InputStream in = website.openStream()) {
             Files.copy(in, target, StandardCopyOption.REPLACE_EXISTING);
         }
         doc.getElementById("logo-url")
-                .attr("src", "C:/create-certificate/resources/image/2bd2a080caf53b335dd5d4f3f89a5a1b.png");
+                .attr("src", Constant.PATH_CREATE_PDF+"image/2bd2a080caf53b335dd5d4f3f89a5a1b.png")
+        .attr("style","margin-bottom: 100px");
         HtmlConverter.convertToPdf(doc.html(), new
-                FileOutputStream(Constant.PATH_CREATE_PDF + "string-to-pdf.pdf"));
+                FileOutputStream(Constant.PATH_CREATE_PDF + "certificate.pdf"));
 
         System.out.println("PDF Created!");
-        return "redirect:/api/subjects/" + id + "/viewCertificate";
+        return "redirect:/api/subjects/";
     }
 }

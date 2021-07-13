@@ -117,6 +117,7 @@
     <button class="btn btn-success" formmethod="get"><a
             href="<c:url value="/api/subjects/${certificate.id}/downloadPDF"/>"
             style="color: white; text-decoration: none; padding: 5px">Download as PDF</a></button>
+    <p>File will save: ${path}</p>
 </div>
 </c:forEach>
 
