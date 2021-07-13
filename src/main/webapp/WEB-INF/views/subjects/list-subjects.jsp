@@ -20,6 +20,9 @@
         <input type="button" value="Add Subject"
                onclick="window.location.href='showForm'; return false;"
                class="btn btn-primary" />
+
+        <button class="btn btn-success" formmethod="get"><a href="<c:url value="/api/subjects/viewPDF"/>"  style="color: white; text-decoration: none; padding: 5px">Export</a></button>
+
         <br/><br/>
         <div class="panel panel-info">
             <div class="panel-body">

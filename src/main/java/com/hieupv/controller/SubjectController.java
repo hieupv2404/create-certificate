@@ -42,10 +42,11 @@ public class SubjectController {
         return "/subjects/list-subjects";
     }
 
-    @GetMapping("/{id}/viewPDF")
-    public ModelAndView viewPDF(@PathVariable Integer id) throws Exception {
-        CertificateResponse certificateResponse = subjectService.createCertificateFromSubject(id);
-        return new ModelAndView("viewPDF", "certificates", certificateResponse);
+    @GetMapping("/viewPDF")
+    public ModelAndView viewPDF(HttpSession session) throws Exception {
+        Student student = (Student) session.getAttribute("student");
+        List<Subject> theSubjects = subjectService.getAllSubject(student);
+        return new ModelAndView("viewPDF", "students", theSubjects);
     }
 
     @GetMapping("/{id}/viewCertificate")
